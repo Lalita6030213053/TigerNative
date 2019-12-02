@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "548006791789",
+    "firebase_url": "https://native-11b81.firebaseio.com",
+    "project_id": "native-11b81",
+    "storage_bucket": "native-11b81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548006791789:android:cd7b4e956fbf17725d8d64",
+        "android_client_info": {
+          "package_name": "com.lalita.nativeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548006791789-rfrf8u38b76maetfqaem2s2i08vbnrej.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lalita.nativeapp",
+            "certificate_hash": "cc7614c6405975db1ca52eb08860e73b0c371b96"
+          }
+        },
+        {
+          "client_id": "548006791789-00ccnidb9sn84ji4n1dhluusjrj5ba8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9m8Jx02im0OW5zPjapccdmjEdSCsd_Kw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548006791789-00ccnidb9sn84ji4n1dhluusjrj5ba8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548006791789:android:6b1ac83a167688ea5d8d64",
+        "android_client_info": {
+          "package_name": "com.nativeapp.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548006791789-00ccnidb9sn84ji4n1dhluusjrj5ba8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9m8Jx02im0OW5zPjapccdmjEdSCsd_Kw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548006791789-00ccnidb9sn84ji4n1dhluusjrj5ba8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
