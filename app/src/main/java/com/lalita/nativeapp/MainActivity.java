@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -77,12 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    public void openLastpage(View view){
-        Intent intent = new Intent(this, ListActivity.class);
-        startActivity(intent);
-//        Toast.makeText(this,"Hello World", Toast.LENGTH_SHORT).show();
-    }
-
 //    private void initFirestore() {
 //        mFirestore = FirebaseFirestore.getInstance();
 //        int LIMIT = 0;
@@ -94,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
     public void signInClick(View view){
         final String TAG = "signInClick";
         Context context = getApplicationContext();
-        CharSequence text = "Login Successfully!!";
-        int duration = Toast.LENGTH_SHORT;
+//        CharSequence text = "Login Successfully!!";
+//        int duration = Toast.LENGTH_SHORT;
         String email = ((TextView)findViewById(R.id.editText)).getText().toString();
         String password = ((TextView)findViewById(R.id.editText2)).getText().toString();
         mAuth.signInWithEmailAndPassword(email, password)
@@ -116,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
+//        Toast toast = Toast.makeText(context, text, duration);
+//        toast.show();
 
     }
 
@@ -145,11 +140,14 @@ public class MainActivity extends AppCompatActivity {
         if(currentUser != null){
             Log.d(TAG, currentUser.getEmail());
             Intent intent = new Intent(this,ListActivity.class);
+            startActivity(intent);
         }
         else{
             Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show();
         }
     }
+
+
 
 
 }

@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -33,6 +34,13 @@ public class ListActivity extends AppCompatActivity {
 
         mAdapter = new MyAdapter(myDataset);
         recyclerView.setAdapter(mAdapter);
+
+//        Snackbar mySnackbar = Snackbar.make(view, stringId, duration);
+//        mySnackbar.show();
+//        Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myCoordinatorLayout),
+//                R.string.email_archived, Snackbar.LENGTH_SHORT);
+//        mySnackbar.setAction(R.string.undo_string, new MyUndoListener());
+//        mySnackbar.show();
 
     }
 

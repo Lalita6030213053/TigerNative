@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Tiger Food</string>
     <string name="email" />
     <string name="password" />
     <string name="tiger_food">Tiger Food</string>
+    <string name="undo_string" />
     <item name="textView" type="id" />
 </resources>

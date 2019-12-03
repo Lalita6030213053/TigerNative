@@ -11,10 +11,4 @@
         android:layout_height="65dp"
         android:background="@color/common_google_signin_btn_text_dark_default" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="59dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
 </LinearLayout>
