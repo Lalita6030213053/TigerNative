@@ -3,6 +3,7 @@ package com.lalita.nativeapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -92,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
 //
     public void signInClick(View view){
         final String TAG = "signInClick";
+        Context context = getApplicationContext();
+        CharSequence text = "Login Successfully!!";
+        int duration = Toast.LENGTH_SHORT;
         String email = ((TextView)findViewById(R.id.editText)).getText().toString();
         String password = ((TextView)findViewById(R.id.editText2)).getText().toString();
         mAuth.signInWithEmailAndPassword(email, password)
@@ -112,6 +116,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+
     }
 
 //    public void sigoutClick(View view){
