@@ -15,34 +15,52 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+
 public class ListActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
-    private String[] myDataset = {"item1", "item2", "item3", "item4"};
+    FirebaseFirestore db;
+    RecyclerView recyclerView;
+    RecyclerView.Adapter mAdapter;
+    RecyclerView.LayoutManager layoutManager;
+    ArrayList<String> firebaseData = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
         recyclerView = (RecyclerView) findViewById(R.id.recycle_view);
-        recyclerView.setHasFixedSize(true);
-
         layoutManager = new LinearLayoutManager(this);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
-
-        mAdapter = new MyAdapter(myDataset);
-        recyclerView.setAdapter(mAdapter);
-
-//        Snackbar mySnackbar = Snackbar.make(view, stringId, duration);
-//        mySnackbar.show();
-//        Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myCoordinatorLayout),
-//                R.string.email_archived, Snackbar.LENGTH_SHORT);
-//        mySnackbar.setAction(R.string.undo_string, new MyUndoListener());
-//        mySnackbar.show();
+        testdata();
 
     }
 
+
+    public void testdata(){
+
+        final String TAG = "testdata";
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("restaurants")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            for (QueryDocumentSnapshot document : task.getResult()){
+                                StringBuilder data = new StringBuilder("");
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+                                firebaseData.add(document.getId());
+                            }
+                        }
+                        mAdapter = new MyAdapter(firebaseData);
+                        recyclerView.setAdapter(mAdapter);
+                    }
+                });
+
+    }
 
 }
