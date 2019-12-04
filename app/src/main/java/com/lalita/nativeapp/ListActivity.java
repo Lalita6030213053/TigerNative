@@ -34,14 +34,14 @@ public class ListActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
-        testdata();
+        testData();
 
     }
 
 
-    public void testdata(){
+    public void testData(){
 
-        final String TAG = "testdata";
+        final String TAG = "testData";
         db = FirebaseFirestore.getInstance();
 
         db.collection("restaurants")

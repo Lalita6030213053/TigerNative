@@ -89,17 +89,24 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            OpenUI(null);
                         }
                     }
                 });
     }
 
-    private void signOut() {
-        mAuth.signOut();
-        OpenUI(null);
-    }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+//            openpage();
+            Toast.makeText(this,"Hello " + currentUser, Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this,"Hello ", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     private void OpenUI(FirebaseUser currentUser) {
         final String TAG = "openUI";

@@ -33,7 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         TextView v = (TextView) LayoutInflater.from( parent.getContext() )
                 .inflate( R.layout.my_text_view, parent, false );
 
-        MyViewHolder vh = new MyViewHolder( v );
+        MyViewHolder vh = new MyViewHolder(v);
         return vh;
     }
 
